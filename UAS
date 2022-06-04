@@ -1,0 +1,373 @@
+%%writefile daydabels.c
+
+#include <stdio.h>
+#define true 1
+#define false 0
+#include <conio.h>
+#include <windows.h>
+
+
+struct pilihan{
+    int kendaraan;
+};
+
+struct subtotal{
+	long int jmlbl1, jmlbl2, jmlbl3, jmlbl4, jmlbl5, jmlbl6, jmlbl7, jmlbl8, jmlbl9, jmlbl10;
+	long int totalharga, bayar, kembalian;
+};
+
+struct barang{
+	int brg1, brg2, brg3, brg4, brg5, brg6, brg7, brg8, brg9, brg10;
+};
+
+
+int ambilPilihan();
+
+int katalogMotor();
+int motorKlasik();
+int motorModern();
+
+int kataint mobilKlasik();
+int mobilModern();
+
+int pembelian();
+int beli();
+
+struct pilihan pilih;
+struct subtotal sub1, sub2, sub3, sub4;
+struct barang brg1, brg2, brg3, brg4;
+
+int main(){
+    pembelian();
+}
+
+int ambilPilihan(){
+    ulangi:
+    printf("\n=====Selamat Datang di Daydabels Showroom=====\n\n");
+	printf(" Silakan Isi Pilihan Anda:\n");
+	printf("=================================================\n");
+	printf("| No.| Macam-Macam Pilihan \t\t\t|\n");
+	printf("|------------------------------------------------\n");
+	printf("| 1. | Katalog Motor\t\t\t\t|\n");
+	printf("| 2. | Katalog Mobil\t\t\t\t|\n");
+	printf("| 3. | Pembelian\t\t\t\t|\n");
+	printf("| 3. | Keluar\t\t\t\t\t|\n");
+	printf("=================================================\n");
+    printf("Pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+    switch(pilih.kendaraan){
+        case 1: katalogMotor();
+                break;
+        case 2: katalogMobil();
+                break;
+        case 3: pembelian();
+                break;
+        case 4: exit(0);
+        default: printf("Pilihan anda salah!!!");
+                goto ulangi;
+    }
+}
+
+int katalogMotor(){
+    ulangiMotor:
+    system("cls");
+    printf("=================================================\n");
+	printf("| No.| Macam-Macam Katalog Motor \t\t|\n");
+	printf("|------------------------------------------------\n");
+	printf("| 1. | Motor Klasik\t\t\t\t|\n");
+	printf("| 2. | Motor Modern\t\t\t\t|\n");
+	printf("| 3. | Kembali ke layar utama\t\t\t|\n");
+	printf("=================================================\n");
+	printf("Masukkan pilihan anda: \n");
+	scanf("%d", &pilih.kendaraan);
+	switch(pilih.kendaraan){
+        case 1: motorKlasik();
+                break;
+        case 2: motorModern();
+                break;
+        case 3: ambilPilihan();
+                break;
+        default: printf("Pilihan anda salah!!!");
+                goto ulangiMotor;
+
+	}
+
+}
+int motorKlasik(){
+    ulangiMotorKlasik:
+    system("cls");
+    printf("Menu Motor Klasik\n");
+    printf("=========================================================\n");
+	printf("|Kode| Nama Barang \t\t\t| Harga\t\t|\n");
+	printf("|--------------------------------------------------------\n");
+	printf("| 90. | Benelli Motobi 152\t\t| Rp 19.800.000 |\n");
+	printf("| 87. | Kawasaki W175\t\t\t| Rp 25.500.000 |\n");
+	printf("| 89. | Benelli Motobi 200 Evo\t\t| Rp 32.500.000 |\n");
+	printf("| 92. | Yamaha XSR 155\t\t\t| Rp 36.500.000 |\n");
+	printf("| 94. | Peugeot Django 150 Allure\t| Rp 50.500.000 |\n");
+	printf("| 85. | Cleveland Heist\t\t\t| Rp 55.500.000 |\n");
+	printf("| 91. | Cleveland Misfit\t\t| Rp 56.500.000 |\n");
+	printf("| 88. | Honda Supercub C125 \t\t| Rp 72.500.000 |\n");
+	printf("| 93. | Kawasaki W250\t\t\t| Rp 79.500.000 |\n");
+	printf("| 86. | Royal Enfield Classic 350\t| Rp 81.500.000 |\n");
+    printf("=========================================================\n\n");
+
+    printf("Binary Search Tree Motor Klasik Diurutkan Berdasarkan Apa: \n");
+    printf("=================================\n");
+	printf("|Kode| Metode \t\t\t|\n");
+	printf("|--------------------------------\n");
+	printf("| 1. | Berdasarkan harga\t|\n");
+	printf("| 2. | Berdasarkan kode\t\t|\n");
+    printf("=================================\n\n");
+    printf("Masukkan pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+    switch(pilih.kendaraan){
+        case 1: printf("Test");
+                break;
+        case 2: printf("Test");
+                break;
+        default: printf("Pilihan anda salah!!!");
+                goto ulangiMotorKlasik;
+
+	}
+}
+
+int motorModern(){
+    ulangiMotorModern:
+    system("cls");
+    printf("Menu Motor Modern\n");
+    printf("==========================================================\n");
+	printf("|Kode | Nama Barang \t\t\t| Harga\t\t |\n");
+	printf("|---------------------------------------------------------\n");
+	printf("| 70. | Honda CB350\t\t\t| Rp 19.800.000  |\n");
+	printf("| 67. | Honda Rebel 300\t\t\t| Rp 51.000.000  |\n");
+	printf("| 69. | Honda Rebel 500 Evo\t\t| Rp 80.500.000  |\n");
+	printf("| 72. | Yamaha XSR 900\t\t\t| Rp 132.000.000 |\n");
+	printf("| 74. | Yamaha XSR 250\t\t\t| Rp 30.000.000  |\n");
+	printf("| 65. | Suzuki SV650X\t\t\t| Rp 115.000.000 |\n");
+	printf("| 71. | Kawasaki W175\t\t\t| Rp 30.500.000  |\n");
+	printf("| 68. | Kawasaki Z900 RS \t\t| Rp 29.000.000  |\n");
+	printf("| 73. | Benelli Motobi 200 Evo\t\t| Rp 31.000.000  |\n");
+	printf("| 66. | Royal Enfield Classic 650 Twin\t| Rp 200.500.000 |\n");
+    printf("==========================================================\n\n");
+
+    printf("Binary Search Tree Motor Modern Diurutkan Berdasarkan Apa: \n");
+    printf("=================================\n");
+	printf("|Kode| Metode \t\t\t|\n");
+	printf("|--------------------------------\n");
+	printf("| 1. | Berdasarkan harga\t|\n");
+	printf("| 2. | Berdasarkan kode\t\t|\n");
+    printf("=================================\n\n");
+    printf("Masukkan pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+    switch(pilih.kendaraan){
+        case 1: printf("Test");
+                break;
+        case 2: printf("Test");
+                break;
+        default: printf("Pilihan anda salah!!!");
+                goto ulangiMotorModern;
+    }
+}
+
+int katalogMobil(){
+    ulangiMobil:
+    system("cls");
+    printf("=================================================\n");
+	printf("| No.| Macam-Macam Katalog Mobil \t\t\t|\n");
+	printf("|------------------------------------------------\n");
+	printf("| 1. | Mobil Klasik\t\t\t\t|\n");
+	printf("| 2. | Mobil Modern\t\t\t\t|\n");
+	printf("=================================================\n");
+	printf("Masukkan pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+	switch(pilih.kendaraan){
+        case 1: mobilKlasik();
+                break;
+        case 2: mobilModern();
+                break;
+        default: printf("Pilihan anda salah!!!");
+                goto ulangiMobil;
+
+	}
+
+}
+
+int mobilKlasik(){
+    ulangiMobilKlasik:
+    system("cls");
+    printf("Menu Mobil Klasik\n");
+    printf("==========================================================\n");
+	printf("|Kode| Nama Barang \t\t\t| Harga\t\t |\n");
+	printf("|---------------------------------------------------------\n");
+	printf("| 50. | Mini Moris\t\t\t| Rp 500.000.000 |\n");
+	printf("| 47. | Holden Kingswood\t\t| Rp 150.000.000 |\n");
+	printf("| 49. | Volkswagen Beetle\t\t| Rp 175.000.000 |\n");
+	printf("| 52. | Volkswagen Combi\t\t| Rp 120.000.000 |\n");
+	printf("| 54. | Jeeps Willys\t\t\t| Rp 450.000.000 |\n");
+	printf("| 45. | Toyota Corolla DX\t\t| Rp 300.000.000 |\n");
+	printf("| 51. | Jeep Wrangler TJ\t\t| Rp 600.000.000 |\n");
+	printf("| 48. | Alfa Romeo Duetto Spider \t| Rp 750.000.000 |\n");
+	printf("| 53. | Chrysler Imperial Ghia\t\t| Rp 270.000.000 |\n");
+	printf("| 46. | Volvo 960\t\t\t| Rp 400.000.000 |\n");
+    printf("==========================================================\n\n");
+
+    printf("Binary Search Tree Mobil Klasik Diurutkan Berdasarkan Apa: \n");
+    printf("=================================\n");
+	printf("|Kode| Metode \t\t\t|\n");
+	printf("|--------------------------------\n");
+	printf("| 1. | Berdasarkan harga\t|\n");
+	printf("| 2. | Berdasarkan kode\t\t|\n");
+    printf("=================================\n\n");
+    printf("Masukkan pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+    switch(pilih.kendaraan){
+        case 1: printf("Test");
+                break;
+        case 2: printf("Test");
+                break;
+        default: printf("Pilihan anda salah!!!");
+                goto ulangiMobilKlasik;
+}
+}
+
+int mobilModern(){
+    ulangiMobilModern:
+    system("cls");
+    printf("Menu Mobil Modern\n");
+    printf("============================================================\n");
+	printf("|Kode| Nama Barang \t\t\t| Harga\t\t   |\n");
+	printf("|-----------------------------------------------------------\n");
+	printf("| 40. | Pajero Sport\t\t\t| Rp 650.000.000   |\n");
+	printf("| 37. | Toyota Alphard\t\t\t| Rp 1.550.000.000 |\n");
+	printf("| 39. | Toyota Avanza\t\t\t| Rp 220.000.000   |\n");
+	printf("| 42. | Honda HR-V\t\t\t| Rp 360.000.000   |\n");
+	printf("| 44. | Honda Jazz\t\t\t| Rp 260.000.000   |\n");
+	printf("| 35. | BMW X1 DX\t\t\t| Rp 710.000.000   |\n");
+	printf("| 41. | Mercedes Benz Sedan\t\t| Rp 800.000.000   |\n");
+	printf("| 38. | Audi A7 \t\t\t| Rp 1.900.000.000 |\n");
+	printf("| 43. | Aston Martin Vintage\t\t| Rp 5.500.000.000 |\n");
+	printf("| 36. | Lamborghini Aventador\t\t| Rp 7.000.000.000 |\n");
+    printf("============================================================\n\n");
+
+    printf("Binary Search Tree Mobil Modern Diurutkan Berdasarkan Apa: \n");
+    printf("=================================\n");
+	printf("|Kode| Metode \t\t\t|\n");
+	printf("|--------------------------------\n");
+	printf("| 1. | Berdasarkan harga\t|\n");
+	printf("| 2. | Berdasarkan kode\t\t|\n");
+    printf("=================================\n\n");
+    printf("Masukkan pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+    switch(pilih.kendaraan){
+        case 1: printf("Test");
+                break;
+        case 2: printf("Test");
+                break;
+        default: printf("Pilihan anda salah!!!");
+                goto ulangiMobilModern;
+}
+
+}
+int pembelian(){
+
+    printf("==Silahkan lakukan pembelian==\n");
+    printf("Menu Mobil Modern\n");
+    printf("============================================================\n");
+	printf("|Kode| Nama Barang \t\t\t| Harga\t\t   |\n");
+	printf("|-----------------------------------------------------------\n");
+	printf("| 40. | Pajero Sport\t\t\t| Rp 650.000.000   |\n");
+	printf("| 37. | Toyota Alphard\t\t\t| Rp 1.550.000.000 |\n");
+	printf("| 39. | Toyota Avanza\t\t\t| Rp 220.000.000   |\n");
+	printf("| 42. | Honda HR-V\t\t\t| Rp 360.000.000   |\n");
+	printf("| 44. | Honda Jazz\t\t\t| Rp 260.000.000   |\n");
+	printf("| 35. | BMW X1 DX\t\t\t| Rp 710.000.000   |\n");
+	printf("| 41. | Mercedes Benz Sedan\t\t| Rp 800.000.000   |\n");
+	printf("| 38. | Audi A7 \t\t\t| Rp 1.900.000.000 |\n");
+	printf("| 43. | Aston Martin Vintage\t\t| Rp 5.500.000.000 |\n");
+	printf("| 36. | Lamborghini Aventador\t\t| Rp 7.000.000.000 |\n");
+    printf("============================================================\n\n");
+
+    printf("Menu Mobil Klasik\n");
+    printf("==========================================================\n");
+	printf("|Kode| Nama Barang \t\t\t| Harga\t\t |\n");
+	printf("|---------------------------------------------------------\n");
+	printf("| 50. | Mini Moris\t\t\t| Rp 500.000.000 |\n");
+	printf("| 47. | Holden Kingswood\t\t| Rp 150.000.000 |\n");
+	printf("| 49. | Volkswagen Beetle\t\t| Rp 175.000.000 |\n");
+	printf("| 52. | Volkswagen Combi\t\t| Rp 120.000.000 |\n");
+	printf("| 54. | Jeeps Willys\t\t\t| Rp 450.000.000 |\n");
+	printf("| 45. | Toyota Corolla DX\t\t| Rp 300.000.000 |\n");
+	printf("| 51. | Jeep Wrangler TJ\t\t| Rp 600.000.000 |\n");
+	printf("| 48. | Alfa Romeo Duetto Spider \t| Rp 750.000.000 |\n");
+	printf("| 53. | Chrysler Imperial Ghia\t\t| Rp 270.000.000 |\n");
+	printf("| 46. | Volvo 960\t\t\t| Rp 400.000.000 |\n");
+    printf("==========================================================\n\n");
+
+    printf("Menu Motor Modern\n");
+    printf("==========================================================\n");
+	printf("|Kode | Nama Barang \t\t\t| Harga\t\t |\n");
+	printf("|---------------------------------------------------------\n");
+	printf("| 70. | Honda CB350\t\t\t| Rp 19.800.000  |\n");
+	printf("| 67. | Honda Rebel 300\t\t\t| Rp 51.000.000  |\n");
+	printf("| 69. | Honda Rebel 500 Evo\t\t| Rp 80.500.000  |\n");
+	printf("| 72. | Yamaha XSR 900\t\t\t| Rp 132.000.000 |\n");
+	printf("| 74. | Yamaha XSR 250\t\t\t| Rp 30.000.000  |\n");
+	printf("| 65. | Suzuki SV650X\t\t\t| Rp 115.000.000 |\n");
+	printf("| 71. | Kawasaki W175\t\t\t| Rp 30.500.000  |\n");
+	printf("| 68. | Kawasaki Z900 RS \t\t| Rp 29.000.000  |\n");
+	printf("| 73. | Benelli Motobi 200 Evo\t\t| Rp 31.000.000  |\n");
+	printf("| 66. | Royal Enfield Classic 650 Twin\t| Rp 200.500.000 |\n");
+    printf("==========================================================\n\n");
+
+    printf("Menu Motor Klasik\n");
+    printf("=========================================================\n");
+	printf("|Kode| Nama Barang \t\t\t| Harga\t\t|\n");
+	printf("|--------------------------------------------------------\n");
+	printf("| 90. | Benelli Motobi 152\t\t| Rp 19.800.000 |\n");
+	printf("| 87. | Kawasaki W175\t\t\t| Rp 25.500.000 |\n");
+	printf("| 89. | Benelli Motobi 200 Evo\t\t| Rp 32.500.000 |\n");
+	printf("| 92. | Yamaha XSR 155\t\t\t| Rp 36.500.000 |\n");
+	printf("| 94. | Peugeot Django 150 Allure\t| Rp 50.500.000 |\n");
+	printf("| 85. | Cleveland Heist\t\t\t| Rp 55.500.000 |\n");
+	printf("| 91. | Cleveland Misfit\t\t| Rp 56.500.000 |\n");
+	printf("| 88. | Honda Supercub C125 \t\t| Rp 72.500.000 |\n");
+	printf("| 93. | Kawasaki W250\t\t\t| Rp 79.500.000 |\n");
+	printf("| 86. | Royal Enfield Classic 350\t| Rp 81.500.000 |\n");
+    printf("=========================================================\n\n");
+
+    printf("Binary Search Tree Mobil Modern Diurutkan Berdasarkan Apa: \n");
+    printf("=================================\n");
+	printf("|Kode| Metode \t\t\t|\n");
+	printf("|--------------------------------\n");
+	printf("| 1. | Lakukan pembelian\t|\n");
+	printf("| 2. | Riset pilihan\t\t|\n");
+	printf("| 3. | Selesai\t\t|\n");
+	printf("| 4. | Kembali ke layar utama\t|\n");
+    printf("=================================\n\n");
+    printf("Masukkan pilihan anda: \n");
+    scanf("%d", &pilih.kendaraan);
+    switch(pilih.kendaraan){
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4: ambilPilihan();
+            break;
+        default: printf("")
+    }
+
+   
+}
+int beli(){
+    printf("Isi data dibawah ini\n");
+    printf("Nama\t: ");
+    fgets("");
+    printf("Kode Barang\t: ");
+    scanf("%d", &pilih.kendaraan);
+    printf("Pembayaran\t:");
+    scanf("%d", )
+
+}
